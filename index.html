@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoveFlix | San Valentín</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --netflix-red: #E50914;
+            --netflix-black: #141414;
+            --netflix-dark-gray: #181818;
+        }
+        body {
+            background-color: var(--netflix-black);
+            color: white;
+            margin: 0;
+            font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Scrollbar estilo Netflix */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--netflix-black); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #444; }
+
+        .netflix-row::-webkit-scrollbar { display: none; }
+        .netflix-row { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .card-transition {
+            transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), z-index 0.45s;
+        }
+        .card-transition:hover {
+            transform: scale(1.25) translateY(-15%);
+            z-index: 50;
+        }
+
+        .top10-number {
+            font-size: 10vw;
+            font-weight: 900;
+            line-height: 0.8;
+            letter-spacing: -0.05em;
+            color: var(--netflix-black);
+            -webkit-text-stroke: 2px #595959;
+            user-select: none;
+        }
+        
+        @media (min-width: 1024px) {
+            .top10-number { font-size: 150px; }
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.45);
+        }
+
+        .letter-spacing-wide {
+            letter-spacing: 0.025em;
+        }
+        
+        .line-height-relaxed {
+            line-height: 1.6;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+    <!-- Importante: Ruta relativa para que Vite la encuentre correctamente -->
+    <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
